@@ -51,6 +51,20 @@
 #so we must expand this path bofore we use it to construct the path to check our rc file. 
 
 #EXPANDING VARIALES:
-#Python does not automatically expand environment varibales in paths, so we must expand these explicitly.
+#Python does not automatically expand environment varibales in paths, so we must expand these explicitly. The process is as follows:
+
+# 1.0. Check whether the environment varibale exists in the current environment
+
+def find_rc(rc_name=".examplerc"):     
+
+  #Check for Env variable
+  var_name = "EXAMPLERC_DIR"
+  if var_nme in os.environ: #1. Check whether the environment variable exists in the current environment
+  
+  var_path = os.path.join(f"${rc_name}", rc_name) #2.0. Use 'join' to construct a path with the environment varible name. 
+                                                  #This will look like $EXAMPLERC_DIR/.examplerc
+  
+  
+
 
 
