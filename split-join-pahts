@@ -33,8 +33,9 @@
     ...:     cur_dir = os.path.dirname(cur_dir)
     ...:     print(cur_dir)
     ...: 
-/home
-/
+#Output
+#/home
+#/
 
 
 #SECTION II JOIN PATH AND VARIABLES:
