@@ -62,8 +62,14 @@ def find_rc(rc_name=".examplerc"):
   var_name = "EXAMPLERC_DIR"
   if var_nme in os.environ: #1. Check whether the environment variable exists in the current environment
   
-  var_path = os.path.join(f"${rc_name}", rc_name) #2.0. Use 'join' to construct a path with the environment varible name. 
-                                                  #This will look like $EXAMPLERC_DIR/.examplerc
+  var_path = os.path.join(f"${rc_name}", rc_name) #2.0. Use 'join' to construct a path with the env. var. name.This will look like $EXAMPLERC_DIR/.examplerc
+          config_path = os.path.expandvars(var_path) #3.0. Expand the env. var. to insert its value into the path.
+          print(f"Checking {config_path}")
+          if os.path.exists(config_path):   #4.0. Check to see of the file exists
+              return config_path
+              
+ #check the current working directory
+ config_path = os.path.join(os.getcwd(), rc_name) #5.0. Construct a path using the current working directory.
   
   
 
