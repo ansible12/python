@@ -2,6 +2,9 @@
 #Python can used strings (binary or otherwise) to represent paths.
 #os.path modules offers path related methods for creating and manipulating "paths as strings"
 #os.path is one of the most widely used functionality. It gives the abiliy to split and join paths 
+
+#SECTION I: SPLIT PATH:
+
 #There are 3 methods used to split paths:
   #1.0. split = os.path.split(cur_dir)
         e.g. 
@@ -32,4 +35,22 @@
     ...: 
 /home
 /
+
+
+#SECTION II JOIN PATH AND VARIABLES:
+#EXPANDING PATHS:
+#Using files to configure an application at runtime is a common practie
+#Files in Unix-like systems are named by  convension as 'dotfiles' ending with 'rc'
+#e.g. Bash shell's .bashrc
+#You can store these files in different locations. Often programss will define a hierarchy of locations to check
+#e.g. your tool might look forst for an environment variable that defines the rc file to use and in its absence, check the working directory if not there
+#then check the user's home directory. We try to locate an rc file in these locations
+#we use the 'file' varoan;e that Python automatically sets when Python code runs from a file. This variable is populated with the
+#path relative to the current working ditrecoty, not an absolute or full path
+#Also Python does not automatically expand paths, as is common in  Unix-like systems, 
+#so we must expand this path bofore we use it to construct the path to check our rc file. 
+
+#EXPANDING VARIALES:
+#Python does not automatically expand environment varibales in paths, so we must expand these explicitly.
+
 
