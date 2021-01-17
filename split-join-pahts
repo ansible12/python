@@ -21,5 +21,15 @@
     In [25]: os.path.basename(cur_dir)
     Out[25]: 'user1'
     
-    #the above command is the converse of os.path.dirname = Parent Dir Name only. Where as os.path.basename = Shows only the leaf directory name not the complete path not even the parent directory name
+    #the above command is the converse of os.path.dirname = Parent Dir Name only. Where as os.path.basename = Shows only the leaf directory name 
+    #not the complete path not even the parent directory name
     
+    #you can sasily use os.path.dir name to walk up a directory tree, using the following code:
+    
+    In [26]: while os.path.basename(cur_dir):
+    ...:     cur_dir = os.path.dirname(cur_dir)
+    ...:     print(cur_dir)
+    ...: 
+/home
+/
+
