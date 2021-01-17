@@ -1,0 +1,25 @@
+#Python Managing Files and Directories
+#Python can used strings (binary or otherwise) to represent paths.
+#os.path modules offers path related methods for creating and manipulating "paths as strings"
+#os.path is one of the most widely used functionality. It gives the abiliy to split and join paths 
+#There are 3 methods used to split paths:
+  #1.0. split = os.path.split(cur_dir)
+        e.g. 
+      In [23]: os.path.split(cur_dir)
+      Out[23]: ('/home', 'user1')
+
+      #above we ca see that the current direct pathname /home/user1 has been split into strings ('/home', 'user1')
+
+  #2.0. dirname = os.path.dirname(cur_dir)
+      In [24]: os.path.dirname(cur_dir)
+      Out[24]: '/home'
+
+      #above we can see that eventhough our current directory is /home/user1 the os.path.dirname shows only the parent directory name '/home'
+
+  #basename = os.path.basename(cur_dir)
+
+    In [25]: os.path.basename(cur_dir)
+    Out[25]: 'user1'
+    
+    #the above command is the converse of os.path.dirname = Parent Dir Name only. Where as os.path.basename = Shows only the leaf directory name not the complete path not even the parent directory name
+    
