@@ -1,0 +1,68 @@
+#/home/user1/Documents/python-projects-code-test/source-files-to-rename
+
+import os
+
+from pathlib import Path
+p = Path("/home/user1/Documents/python-projects-code-test/source-files-to-rename/'01. Commentary.mp3.part'")
+extentions ="".join(p.suffixes)
+
+
+### python>=3.9
+str(p).removesuffix(extensions)
+#'/path/to/myfile'
+'/home/user1/Documents/python-projects-code-test/source-files-to-rename/'
+
+
+>>> from pathlib import Path
+>>> p = Path("/path/to/myfile.tar.gz")
+>>> extensions = "".join(p.suffixes)
+
+# any python version
+>>> str(p).replace(extensions, "")
+'/path/to/myfile'
+
+# python>=3.9
+>>> str(p).removesuffix(extensions)
+'/path/to/myfile'
+
+
+=====
+
+from pathlib import Path
+from typing import Union
+
+PathLike = Union[str, Path]
+
+
+def replace_ext(path: PathLike, new_ext: str = "") -> Path:
+    extensions = "".join(Path(path).suffixes)
+    return Path(str(p).replace(extensions, new_ext))
+
+
+p = Path("/path/to/myfile.tar.gz")
+new_ext = ".jpg"
+
+assert replace_ext(p, new_ext) == Path('/path/to/myfile.jpg')
+assert replace_ext(str(p), new_ext) == Path('/path/to/myfile.jpg')
+assert replace_ext(p) == Path('/path/to/myfile')
+    
+====
+
+https://stackoverflow.com/questions/3548673/how-to-replace-or-strip-an-extension-from-a-filename-in-python
+import pathlib
+
+p = pathlib.Path('/home/user1/Documents/python-projects-code-test/source-files-to-rename')
+p = p.with_name(p.stem).with_suffix('.jpg')
+
+
+
+======
+
+from pathlib import Path
+p = Path('mysequence.fasta')
+p.rename(p.with_suffix('.aln'))
+
+
+https://stackoverflow.com/questions/2900035/changing-file-extension-in-python/28457540
+
+
